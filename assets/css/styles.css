@@ -1,12 +1,18 @@
 /* Importing a modern Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-body {
-    font-family: 'Poppins', sans-serif;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
     background: #f4f4f4;
     color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
 /* Navigation Bar */
@@ -19,6 +25,7 @@ nav {
     top: 0;
     left: 0;
     z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 nav ul {
@@ -27,61 +34,77 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: 600;
-    transition: 0.3s;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background 0.3s ease;
 }
 
 nav ul li a:hover {
     color: #00bcd4;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
 }
 
 /* Hero Section */
 .hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(to right, #00bcd4, #008394);
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
     color: white;
+    text-align: center;
+    padding: 120px 20px;
+    animation: fadeIn 1.5s ease-in-out;
+    margin-top: 60px;
 }
 
 .hero h1 {
     font-size: 3rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
     margin-bottom: 10px;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    opacity: 0.8;
+    font-size: 1.25rem;
+    opacity: 0.9;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* Projects Section */
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 40px;
+    gap: 25px;
+    padding: 40px 20px;
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
+    background: #f4f4f4;
 }
 
 .project-card {
     background: white;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .project-img {
@@ -91,13 +114,31 @@ nav ul li a:hover {
 }
 
 .project-card h3 {
-    padding: 10px;
+    padding: 15px 15px 5px;
+    font-weight: 600;
+    color: #222;
 }
 
 .project-card p {
-    padding: 0 10px 10px;
-    font-size: 0.9rem;
+    padding: 0 15px 15px;
+    font-size: 0.95rem;
     color: #555;
+}
+
+.project-card a {
+    display: inline-block;
+    margin: 0 15px 15px;
+    padding: 8px 16px;
+    background: #00bcd4;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 400;
+    transition: background 0.3s ease;
+}
+
+.project-card a:hover {
+    background: #008394;
 }
 
 /* Footer */
@@ -105,5 +146,26 @@ footer {
     text-align: center;
     background: #222;
     color: white;
-    padding: 15px;
+    padding: 20px;
+    font-size: 0.9rem;
+    border-top: 3px solid #00bcd4;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 15px;
+    }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    nav ul li {
+        margin: 0 10px;
+    }
+    .projects {
+        padding: 20px;
+    }
 }
