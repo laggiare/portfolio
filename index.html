@@ -9,14 +9,23 @@
 <body>
 
     <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+    <div id="navbar-container"></div>
+    <script>
+        fetch("assets/components/navbar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar-container").innerHTML = data;
+    
+                // Highlight active page
+                const links = document.querySelectorAll("#navbar-container nav a");
+                links.forEach(link => {
+                    if (link.href === window.location.href) {
+                        link.style.color = "#00bcd4"; // Active link color
+                        link.style.fontWeight = "bold"; // Optional bold text
+                    }
+                });
+            });
+    </script>
 
     <!-- Hero Section -->
     <header class="hero">
@@ -51,6 +60,6 @@
     <footer>
         <p>&copy; 2025 Aleksandar Lalović Portfolio</p>
     </footer>
-
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
