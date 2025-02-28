@@ -6,27 +6,13 @@
     <title>portfolio</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="/workspaces/portfolio/assets/images/favicon.png">
 </head>
 <body>
 
     <!-- Navigation Bar -->
     <div id="navbar-container"></div>
-    <script>
-        fetch("assets/components/navbar.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("navbar-container").innerHTML = data;
-    
-                // Highlight active page
-                const links = document.querySelectorAll("#navbar-container nav a");
-                links.forEach(link => {
-                    if (link.href === window.location.href) {
-                        link.style.color = "#00bcd4"; // Active link color
-                        link.style.fontWeight = "bold"; // Optional bold text
-                    }
-                });
-            });
-    </script>
 
     <!-- Hero Section -->
     <header class="hero">
@@ -51,9 +37,10 @@
         </div>
 
         <div class="project-card">
-            <img src="assets/images/project3.jpg" alt="Project 3" class="project-img">
+            <img src="assets/images/space-dodger-game.png" alt="Space Dodger Game" class="project-img">
             <h3>Project 3</h3>
-            <p>A creative project that showcases my design skills.</p>
+            <p>Spaceship that dodges asteroids</p>
+            <a href="https://laggiare.github.io/space-dodger//" target="_blank">View Project</a>
         </div>
     </section>
 
