@@ -47,7 +47,6 @@ body {
     color: #222;
 }
 
-/* Project Grid */
 .projects-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -56,7 +55,6 @@ body {
     margin: 0 auto;
 }
 
-/* Project Cards */
 .project-card {
     background: white;
     border-radius: 12px;
@@ -72,7 +70,6 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Animation Wrapper for Lottie */
 .animation-wrapper {
     width: 100%;
     height: 200px;
@@ -83,10 +80,9 @@ body {
     border-radius: 8px;
 }
 
-/* Adjusted Project Image/Player */
 .project-img {
-    width: 300px; /* Matches inline style on dotlottie-player */
-    height: 200px; /* Matches inline style on dotlottie-player */
+    width: 300px;
+    height: 200px;
     display: block;
 }
 
@@ -136,6 +132,35 @@ body {
     color: #555;
 }
 
+/* Social Links (FontAwesome) */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Space between icons */
+}
+
+.social-links i {
+    font-size: 40px; /* Icon size */
+    color: #333; /* Matches body text */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links i:hover {
+    transform: scale(1.1);
+}
+
+.fa-envelope:hover {
+    color: #d44638; /* Gmail red */
+}
+
+.fa-github:hover {
+    color: #181717; /* GitHub black */
+}
+
+.fa-linkedin:hover {
+    color: #0A66C2; /* LinkedIn blue */
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -158,5 +183,10 @@ footer {
 
     .hero p {
         font-size: 1.2rem;
+    }
+
+    .social-links i {
+        font-size: 32px; /* Slightly smaller icons on mobile */
+        gap: 20px;
     }
 }
