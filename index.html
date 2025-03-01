@@ -3,51 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>portfolio</title>
+    <title>Aleksandar Lalović - Portfolio</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="/workspaces/portfolio/assets/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 </head>
 <body>
-
-    <!-- Navigation Bar -->
-    <div id="navbar-container"></div>
-
-    <!-- Hero Section -->
-    <header class="hero">
+     <!-- Hero Section -->
+    <header id="hero" class="hero">
         <h1>Aleksandar Lalović</h1>
         <p>Showcasing my designs and web development projects</p>
     </header>
 
     <!-- Projects Section -->
-    <section class="projects">
+<section id="projects" class="projects">
+    <div class="projects-container">
         <div class="project-card">
-            <img src="assets/images/weather.png" alt="Weather App" class="project-img">
+            <div class="animation-wrapper">
+                <dotlottie-player 
+                    src="https://lottie.host/cf261314-f6b4-4505-842b-8d0dec8d6eac/C2x6nMHvGw.lottie" 
+                    background="transparent" 
+                    speed="1" 
+                    style="width: 300px; height: 200px;" 
+                    loop 
+                    autoplay
+                    class="project-img">
+                </dotlottie-player>
+            </div>
             <h3>Weather App</h3>
-            <p>A weather forecasting app that fetches real-time data.</p>
+            <p>Real-time weather data.</p>
             <a href="https://laggiare.github.io/weather-app/" target="_blank">View Project</a>
         </div>
 
         <div class="project-card">
-            <img src="assets/images/currency.png" alt="Currency Converter" class="project-img">
+            <div class="animation-wrapper">
+                <dotlottie-player 
+                    src="https://lottie.host/0d453e43-0f75-4ba0-90dd-30bbdd574b4e/0iv8S8VhiO.lottie" 
+                    background="transparent" 
+                    speed="1" 
+                    style="width: 300px; height: 200px;" 
+                    loop 
+                    autoplay
+                    class="project-img">
+                </dotlottie-player>
+            </div>
             <h3>Currency Converter</h3>
-            <p>A nice and handy Curency Converter</p>
+            <p>A nice and handy Currency Converter</p>
             <a href="https://laggiare.github.io/currency-converter/" target="_blank">View Project</a>
         </div>
 
         <div class="project-card">
-            <img src="assets/images/space-dodger-game.png" alt="Space Dodger Game" class="project-img">
-            <h3>Project 3</h3>
+            <div class="animation-wrapper">
+                <dotlottie-player 
+                    src="https://lottie.host/be6ce714-360e-4e74-8603-70cbf1d50873/csj27rIGQT.lottie" 
+                    background="transparent" 
+                    speed="1" 
+                    style="width: 300px; height: 200px;" 
+                    loop 
+                    autoplay
+                    class="project-img">
+                </dotlottie-player>
+            </div>
+            <h3>Space Dodger Game</h3>
             <p>Spaceship that dodges asteroids</p>
-            <a href="https://laggiare.github.io/space-dodger//" target="_blank">View Project</a>
+            <a href="https://laggiare.github.io/space-dodger/" target="_blank">View Project</a>
         </div>
+    </div>
+</section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>I am a passionate web developer constantly working on improving my skills and creating unique projects.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p>Email: laggiare@gmail.com</p>
+        <p>GitHub: <a href="https://github.com/laggiare" target="_blank">github.com/laggiare</a></p>
     </section>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Aleksandar Lalović Portfolio</p>
     </footer>
+
     <script src="assets/js/script.js"></script>
 </body>
 </html>

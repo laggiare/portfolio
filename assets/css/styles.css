@@ -1,10 +1,11 @@
-/* Importing a modern Google Font */
+/* Importing Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -12,48 +13,6 @@ body {
     background: #f4f4f4;
     color: #333;
     line-height: 1.6;
-    scroll-behavior: smooth;
-}
-
-/* Navigation Bar */
-nav {
-    background: #222;
-    padding: 15px;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-nav ul li {
-    margin: 0 20px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    padding: 5px 10px;
-    transition: color 0.3s ease, background 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #00bcd4;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
 }
 
 /* Hero Section */
@@ -62,172 +21,142 @@ nav ul li a:hover {
     color: white;
     text-align: center;
     padding: 120px 20px;
-    animation: fadeIn 1.5s ease-in-out;
-    margin-top: 60px;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem;
     font-weight: 600;
-    margin-bottom: 10px;
 }
 
 .hero p {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
+    font-weight: 300;
     opacity: 0.9;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }
 
 /* Projects Section */
 .projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    background: #f4f4f4;
+    text-align: center;
+    padding: 50px 20px;
 }
 
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+/* Project Grid */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Project Cards */
 .project-card {
     background: white;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+    text-align: center;
 }
 
 .project-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.project-img {
+/* Animation Wrapper for Lottie */
+.animation-wrapper {
     width: 100%;
     height: 200px;
-    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* Adjusted Project Image/Player */
+.project-img {
+    width: 300px; /* Matches inline style on dotlottie-player */
+    height: 200px; /* Matches inline style on dotlottie-player */
+    display: block;
 }
 
 .project-card h3 {
-    padding: 15px 15px 5px;
+    margin: 15px 0 10px;
+    font-size: 1.6rem;
     font-weight: 600;
-    color: #222;
 }
 
 .project-card p {
-    padding: 0 15px 15px;
-    font-size: 0.95rem;
-    color: #555;
+    font-size: 1rem;
+    color: #666;
 }
 
 .project-card a {
     display: inline-block;
-    margin: 0 15px 15px;
-    padding: 8px 16px;
-    background: #00bcd4;
+    margin-top: 12px;
+    padding: 10px 15px;
+    background: #1e3c72;
     color: white;
     text-decoration: none;
+    font-weight: 500;
     border-radius: 5px;
-    font-weight: 400;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .project-card a:hover {
-    background: #008394;
+    background: #2a5298;
+    transform: scale(1.05);
+}
+
+/* About & Contact Sections */
+.about, .contact {
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about h2, .contact h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.about p, .contact p {
+    font-size: 1.1rem;
+    color: #555;
 }
 
 /* Footer */
 footer {
     text-align: center;
+    padding: 20px;
     background: #222;
     color: white;
-    padding: 20px;
     font-size: 0.9rem;
     border-top: 3px solid #00bcd4;
 }
 
-/* Responsive Adjustments */
+/* Responsive Design */
 @media (max-width: 768px) {
     .hero {
         padding: 80px 15px;
     }
+
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
+
     .hero p {
-        font-size: 1rem;
-    }
-    nav ul li {
-        margin: 0 10px;
-    }
-    .projects {
-        padding: 20px;
-    }
-}
-html {
-    scroll-behavior: smooth;
-}
-
-/* Navbar container */
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-}
-
-/* Navigation links */
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
-.nav-links li {
-    margin: 0 15px;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-/* Hamburger Menu - Hidden by Default */
-.hamburger {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: white;
-}
-
-/* Mobile View */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: #222;
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
-    }
-
-    .nav-links li {
-        margin: 10px 0;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .nav-links.active {
-        display: flex;
+        font-size: 1.2rem;
     }
 }
