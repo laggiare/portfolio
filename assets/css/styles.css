@@ -161,6 +161,11 @@ body {
     color: #0A66C2; /* LinkedIn blue */
 }
 
+.fa-upwork:hover {
+    color: #00FF00; /* Upwork green */
+
+}
+
 /* Footer */
 footer {
     text-align: center;
