@@ -1,6 +1,25 @@
 /* Importing Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+:root {
+    /* Light Mode Colors */
+    --bg-color: hsl(0, 0%, 96%);
+    --text-color: hsl(0, 0%, 20%);
+    --primary-color: hsl(217, 60%, 28%);
+    --primary-hover: hsl(217, 56%, 38%);
+    --card-bg: hsl(0, 0%, 100%);
+    --shadow-color: hsla(0, 0%, 0%, 0.1);
+    --footer-bg: hsl(0, 0%, 13%);
+    --footer-border: hsl(188, 100%, 41%);
+    --btn-text-color: hsl(0, 0%, 100%);
+
+    /* Social Media Colors */
+    --github-color: hsl(0, 0%, 10%);
+    --linkedin-color: hsl(210, 100%, 35%);
+    --upwork-color: hsl(120, 100%, 50%);
+    --email-color: hsl(4, 74%, 55%);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,15 +29,15 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #f4f4f4;
-    color: #333;
+    background: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: white;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    color: var(--btn-text-color);
     text-align: center;
     padding: 120px 20px;
 }
@@ -44,7 +63,7 @@ body {
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 30px;
-    color: #222;
+    color: var(--text-color);
 }
 
 .projects-container {
@@ -56,10 +75,10 @@ body {
 }
 
 .project-card {
-    background: white;
+    background: var(--card-bg);
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px var(--shadow-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     padding: 20px;
     text-align: center;
@@ -67,23 +86,7 @@ body {
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.animation-wrapper {
-    width: 100%;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    border-radius: 8px;
-}
-
-.project-img {
-    width: 300px;
-    height: 200px;
-    display: block;
+    box-shadow: 0 8px 20px hsla(0, 0%, 0%, 0.15);
 }
 
 .project-card h3 {
@@ -94,15 +97,15 @@ body {
 
 .project-card p {
     font-size: 1rem;
-    color: #666;
+    color: hsl(0, 0%, 40%);
 }
 
 .project-card a {
     display: inline-block;
     margin-top: 12px;
     padding: 10px 15px;
-    background: #1e3c72;
-    color: white;
+    background: var(--primary-color);
+    color: var(--btn-text-color);
     text-decoration: none;
     font-weight: 500;
     border-radius: 5px;
@@ -110,7 +113,7 @@ body {
 }
 
 .project-card a:hover {
-    background: #2a5298;
+    background: var(--primary-hover);
     transform: scale(1.05);
 }
 
@@ -129,19 +132,20 @@ body {
 
 .about p, .contact p {
     font-size: 1.1rem;
-    color: #555;
+    color: hsl(0, 0%, 33%);
 }
 
 /* Social Links (FontAwesome) */
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 25px; /* Space between icons */
+    gap: 25px;
+    margin-top: 20px;
 }
 
 .social-links i {
-    font-size: 40px; /* Icon size */
-    color: #333; /* Matches body text */
+    font-size: 40px;
+    color: var(--text-color);
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -150,30 +154,29 @@ body {
 }
 
 .fa-envelope:hover {
-    color: #d44638; /* Gmail red */
+    color: var(--email-color);
 }
 
 .fa-github:hover {
-    color: #181717; /* GitHub black */
+    color: var(--github-color);
 }
 
 .fa-linkedin:hover {
-    color: #0A66C2; /* LinkedIn blue */
+    color: var(--linkedin-color);
 }
 
 .fa-upwork:hover {
-    color: #00FF00; /* Upwork green */
-
+    color: var(--upwork-color);
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 20px;
-    background: #222;
-    color: white;
+    background: var(--footer-bg);
+    color: var(--btn-text-color);
     font-size: 0.9rem;
-    border-top: 3px solid #00bcd4;
+    border-top: 3px solid var(--footer-border);
 }
 
 /* Responsive Design */
@@ -191,7 +194,7 @@ footer {
     }
 
     .social-links i {
-        font-size: 32px; /* Slightly smaller icons on mobile */
+        font-size: 32px;
         gap: 20px;
     }
 }
