@@ -20,6 +20,19 @@
     --email-color: hsl(4, 74%, 55%);
 }
 
+/* Dark Mode */
+.dark-mode {
+    --bg-color: hsl(0, 0%, 10%);
+    --text-color: hsl(0, 0%, 90%);
+    --primary-color: hsl(217, 60%, 50%);
+    --primary-hover: hsl(217, 56%, 60%);
+    --card-bg: hsl(0, 0%, 20%);
+    --shadow-color: hsla(0, 0%, 100%, 0.1);
+    --footer-bg: hsl(0, 0%, 5%);
+    --footer-border: hsl(188, 100%, 55%);
+    --btn-text-color: hsl(0, 0%, 100%);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -40,6 +53,7 @@ body {
     color: var(--btn-text-color);
     text-align: center;
     padding: 120px 20px;
+    position: relative;  /* Ensures button stays inside */
 }
 
 .hero h1 {
@@ -197,4 +211,46 @@ footer {
         font-size: 32px;
         gap: 20px;
     }
+}
+
+#dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#dark-mode-toggle:hover {
+    transform: scale(1.1);
+    color: #ffd700; /* Light gold hover effect */
+}
+
+.dark-mode-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #222;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, transform 0.2s;
+}
+
+.dark-mode-btn:hover {
+    background-color: #444;
+    transform: scale(1.1);
+}
+
+.dark-mode.active .dark-mode-btn {
+    background-color: #fdd835;
+    color: black;
 }
