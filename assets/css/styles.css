@@ -8,7 +8,7 @@
     --primary-color: hsl(217, 60%, 28%);
     --primary-hover: hsl(217, 56%, 38%);
     --card-bg: hsl(0, 0%, 100%);
-    --shadow-color: hsla(0, 0%, 0%, 0.1);
+    --shadow-color: hsl(0, 0%, 0%, 0.1);
     --footer-bg: hsl(0, 0%, 13%);
     --footer-border: hsl(188, 100%, 41%);
     --btn-text-color: hsl(0, 0%, 100%);
@@ -27,12 +27,12 @@
     --primary-color: hsl(217, 60%, 50%);
     --primary-hover: hsl(217, 56%, 60%);
     --card-bg: hsl(0, 0%, 20%);
-    --shadow-color: hsla(0, 0%, 100%, 0.1);
+    --shadow-color: hsl(0, 0%, 100%, 0.1);
     --footer-bg: hsl(0, 0%, 5%);
     --footer-border: hsl(188, 100%, 55%);
-    --btn-text-color: hsl(0, 0%, 100%);
 }
 
+/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -53,7 +53,7 @@ body {
     color: var(--btn-text-color);
     text-align: center;
     padding: 120px 20px;
-    position: relative;  /* Ensures button stays inside */
+    position: relative;
 }
 
 .hero h1 {
@@ -96,11 +96,12 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     padding: 20px;
     text-align: center;
+    min-width: 300px; /* Added to match animation width */
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px hsla(0, 0%, 0%, 0.15);
+    box-shadow: 0 8px 20px hsl(0, 0%, 0%, 0.15);
 }
 
 .project-card h3 {
@@ -131,6 +132,19 @@ body {
     transform: scale(1.05);
 }
 
+.animation-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.project-img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* About & Contact Sections */
 .about, .contact {
     text-align: center;
@@ -149,7 +163,7 @@ body {
     color: hsl(0, 0%, 33%);
 }
 
-/* Social Links (FontAwesome) */
+/* Social Links */
 .social-links {
     display: flex;
     justify-content: center;
@@ -167,21 +181,10 @@ body {
     transform: scale(1.1);
 }
 
-.fa-envelope:hover {
-    color: var(--email-color);
-}
-
-.fa-github:hover {
-    color: var(--github-color);
-}
-
-.fa-linkedin:hover {
-    color: var(--linkedin-color);
-}
-
-.fa-upwork:hover {
-    color: var(--upwork-color);
-}
+.fa-envelope:hover { color: var(--email-color); }
+.fa-github:hover { color: var(--github-color); }
+.fa-linkedin:hover { color: var(--linkedin-color); }
+.fa-upwork:hover { color: var(--upwork-color); }
 
 /* Footer */
 footer {
@@ -191,6 +194,49 @@ footer {
     color: var(--btn-text-color);
     font-size: 0.9rem;
     border-top: 3px solid var(--footer-border);
+}
+
+/* Dark Mode Toggle */
+#dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--btn-text-color);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#dark-mode-toggle:hover {
+    transform: scale(1.1);
+    color: hsl(51, 100%, 65%);
+}
+
+.dark-mode-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: hsl(0, 0%, 13%);
+    color: var(--btn-text-color);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0 4px 6px hsl(0, 0%, 0%, 0.1);
+    transition: background 0.3s, transform 0.2s;
+}
+
+.dark-mode-btn:hover {
+    background-color: hsl(0, 0%, 27%);
+    transform: scale(1.1);
+}
+
+.dark-mode.active .dark-mode-btn {
+    background-color: hsl(51, 96%, 58%);
+    color: hsl(0, 0%, 0%);
 }
 
 /* Responsive Design */
@@ -211,46 +257,4 @@ footer {
         font-size: 32px;
         gap: 20px;
     }
-}
-
-#dark-mode-toggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: white;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-#dark-mode-toggle:hover {
-    transform: scale(1.1);
-    color: #ffd700; /* Light gold hover effect */
-}
-
-.dark-mode-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #222;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s, transform 0.2s;
-}
-
-.dark-mode-btn:hover {
-    background-color: #444;
-    transform: scale(1.1);
-}
-
-.dark-mode.active .dark-mode-btn {
-    background-color: #fdd835;
-    color: black;
 }
